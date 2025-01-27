@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 const Redirect = () => {
-    const { to_url } = useParams(); // Extract the route parameter
+    const { to_url } = useParams();
     const navigate = useNavigate();
     const [targetLink, setTargetLink] = useState("/");
-    const [loading, setLoading] = useState(true); // Track API call status
+    const [loading, setLoading] = useState(true); 
 
     const urlMapping = {
         team: '/team',
@@ -29,31 +29,29 @@ const Redirect = () => {
                     const target = urlMapping[to_url];
                     setTargetLink(target);
 
-                    // Make API call for valid link
                     await axios.post(apiUrl, {
                         status: 'valid',
                         target,
                     });
 
-                    // Redirect only after API call
                     if (target.startsWith('http')) {
-                        window.location.href = target; // External link redirection
+                        window.location.href = target;
                     } else {
-                        navigate(target, { replace: true }); // Internal navigation
+                        navigate(target, { replace: true });
                     }
                 } else {
-                    // API call for invalid link
+                   
                     await axios.post(apiUrl, {
                         status: 'invalid',
                     });
 
-                    // Redirect to default route
+                 
                     navigate('/', { replace: true });
                 }
             } catch (error) {
                 console.error('Error during API call:', error);
             } finally {
-                setLoading(false); // Ensure loading state is updated
+                setLoading(false);
             }
         };
 

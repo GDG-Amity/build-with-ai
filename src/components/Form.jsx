@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import axios from "axios"; // Import axios
+import axios from "axios"; 
 
 export default function Form() {
     const [formData, setFormData] = useState({
@@ -13,8 +13,7 @@ export default function Form() {
     });
 
     const [errors, setErrors] = useState({});
-    const [isSubmitting, setIsSubmitting] = useState(false); // State to track submission status
-
+    const [isSubmitting, setIsSubmitting] = useState(false);
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData({
@@ -44,16 +43,12 @@ export default function Form() {
         e.preventDefault();
 
         if (validate()) {
-            setIsSubmitting(true); // Set submitting to true
+            setIsSubmitting(true); 
             try {
-                // Send the form data to the API using axios
                 const response = await axios.post("", formData);
                 if (response.status === 200) {
                     alert("Form submitted successfully!");
-                    // Store the form data in localStorage after successful submission
                     localStorage.setItem("formData", JSON.stringify(formData));
-
-                    // Reset form after successful submission
                     setFormData({
                         fullName: "",
                         mobile: "",
@@ -70,7 +65,7 @@ export default function Form() {
             } catch (error) {
                 alert("An error occurred while submitting the form. Please try again.");
             } finally {
-                setIsSubmitting(false); // Reset submitting state
+                setIsSubmitting(false); 
             }
         }
     };
@@ -190,7 +185,7 @@ export default function Form() {
                     <button
                         type="submit"
                         className="w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400"
-                        disabled={isSubmitting} // Disable submit button while submitting
+                        disabled={isSubmitting} 
                     >
                         {isSubmitting ? "Submitting..." : "Submit"}
                     </button>

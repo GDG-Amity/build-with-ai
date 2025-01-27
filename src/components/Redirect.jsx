@@ -21,7 +21,7 @@ const Redirect = () => {
     };
 
     useEffect(() => {
-        const apiUrl = `https://gdg-amity-api.azurewebsites.net/redirect/${to_url || 'invalid'}`;
+        const apiUrl = ``;
 
         const handleRedirection = async () => {
             try {

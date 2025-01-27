@@ -47,7 +47,7 @@ export default function Form() {
             setIsSubmitting(true); // Set submitting to true
             try {
                 // Send the form data to the API using axios
-                const response = await axios.post("https://gdg-amity-api.azurewebsites.net/add_build_with_ai", formData);
+                const response = await axios.post("", formData);
                 if (response.status === 200) {
                     alert("Form submitted successfully!");
                     // Store the form data in localStorage after successful submission

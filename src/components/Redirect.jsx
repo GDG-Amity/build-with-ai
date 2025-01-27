@@ -17,7 +17,7 @@ const Redirect = () => {
         linktree:'https://linktr.ee/gdgcamity',
         rajat:'https://linkedin.com/in/rajatrajput2004',
         register:'/register',
-        github:'https://github.com/GDG-On-Campus-Amity-University-Noida'
+        github:'https://github.com/GDG-Amity/build-with-ai'
     };
 
     useEffect(() => {

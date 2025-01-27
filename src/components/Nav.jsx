@@ -47,9 +47,9 @@ export default function Nav() {
                         ))}
                     </div>
                     <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-                        <a href="#" className="text-sm/6 font-semibold text-white-900">
+                        <Link to="/redirect/github" className="text-sm/6 font-semibold text-white-900">
                             GitHub <span aria-hidden="true">&rarr;</span>
-                        </a>
+                        </Link>
                     </div>
                 </nav>
                 <Dialog open={mobileMenuOpen} onClose={setMobileMenuOpen} className="lg:hidden">
